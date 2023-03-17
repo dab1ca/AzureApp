@@ -31,7 +31,7 @@ resource "azurerm_network_security_group" "rg-01-uksouth" {
     protocol                   = "Tcp"
     source_port_range          = "*"
     destination_port_range     = "22"
-    source_address_prefix      = "51.142.206.236"
+    source_address_prefix      = "172.187.218.113"
     destination_address_prefix = "*"
   }
 
