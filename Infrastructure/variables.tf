@@ -41,3 +41,4 @@ variable "db_vm_name" {
 variable "server_password" {
   default = "Taino_Obi4am_G@zis"
 }
+
