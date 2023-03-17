@@ -12,7 +12,7 @@ send "sudo hostnamectl set-hostname $SERVERNAME\r"
 send "sudo apt install mariadb-server git\r"
 expect "Do you want to continue?"
 send "Y\r"
-sleep 45
+set timeout 45
 send "sudo mysql_secure_installation\r"
 expect "Enter current password for root"
 send "\r"

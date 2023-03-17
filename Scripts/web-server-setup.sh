@@ -9,12 +9,13 @@ expect "Are you sure you want to continue connecting ?"
 send "yes\r"
 expect "assword:"
 send "$USERPASSWORD\r"
+set timeout 10
 send "sudo hostnamectl set-hostname $SERVERNAME\r"
 send "sudo apt update\r"
 send "sudo apt install apache2 php php-mysqlnd git\r"
 expect "Do you want to continue?"
 send "Y\r"
-sleep 45
+set timeout 45
 send "sudo ufw allow 'Apache' && sudo ufw reset\r"
 expect "Proceed with operation"
 send "Y\r"
