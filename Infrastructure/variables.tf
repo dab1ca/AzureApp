@@ -26,10 +26,6 @@ variable "web_vm_name" {
   default = "web-server"
 }
 
-variable "db_vm_piblicip_name" {
-  default = "db-vm-nic-01-uksouth"
-}
-
 variable "db_vm_nic_name" {
   default = "db-vm-nic-01-uksouth"
 }
