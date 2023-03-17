@@ -89,13 +89,6 @@ resource "azurerm_network_interface" "rg-01-uksouth" {
   }
 }
 
-resource "azurerm_public_ip" "rg-01-uksouth-db" {
-  name                = var.db_vm_piblicip_name
-  resource_group_name = azurerm_resource_group.rg-01-uksouth.name
-  location            = azurerm_resource_group.rg-01-uksouth.location
-  allocation_method   = "Dynamic"
-}
-
 resource "azurerm_network_interface" "rg-01-uksouth-db" {
   name                = var.db_vm_nic_name
   location            = azurerm_resource_group.rg-01-uksouth.location
@@ -106,7 +99,6 @@ resource "azurerm_network_interface" "rg-01-uksouth-db" {
     subnet_id                     = azurerm_subnet.rg-01-uksouth.id
     private_ip_address_allocation = "Static"
     private_ip_address            = "10.21.0.101"
-    public_ip_address_id          = azurerm_public_ip.rg-01-uksouth-db.id
   }
 }
 
