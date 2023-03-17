@@ -5,8 +5,8 @@ set SERVERNAME [lindex $argv 2]
 set APPREPO [lindex $argv 3]
 set WEBSERVERPUBLICIP [lindex $argv 4]
 spawn ssh $SERVERUSER@$WEBSERVERPUBLICIP
-expect "Are you sure you want to continue connecting ?"
-send "yes\r"
+#expect "Are you sure you want to continue connecting ?"
+#send "yes\r"
 expect "assword:"
 send "$USERPASSWORD\r"
 set timeout 10
