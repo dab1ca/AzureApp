@@ -5,7 +5,7 @@ set SERVERNAME [lindex $argv 2]
 set APPREPO [lindex $argv 3]
 set WEBSERVERPUBLICIP [lindex $argv 4]
 
-set timeout 25
+set timeout 60
 spawn ssh $SERVERUSER@$WEBSERVERPUBLICIP
 
 expect "yes/no" { 
