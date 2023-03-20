@@ -9,7 +9,6 @@ set DBIPADDRESS [lindex $argv 5]
 spawn ssh $SERVERUSER@$DBIPADDRESS
 
 set timeout 60
-spawn ssh $SERVERUSER@$WEBSERVERPUBLICIP
 
 expect "yes/no" { 
 	send "yes\r"
