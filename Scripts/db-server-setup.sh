@@ -20,16 +20,16 @@ expect "Do you want to continue?" { send "Y\r" }
 
 expect "$ " { send "sudo mysql_secure_installation\r" }
 expect "Enter current password for root" { send "\r" }
-expect "Change the root password?" { send "Y\r" } 
-expect "New password:" { send "$DBROOTPASSWORD\r" } 
-expect "Re-enter new password:" { send "$DBROOTPASSWORD\r" }
-expect "Remove anonymous users?" { send "n\r" }
-expect "Disallow root login remotely" { send "n\r" } 
-expect "Remove test database and access to it?" { send "Y\r" }
-expect "Reload privilege tables now?" { send "Y\r" }
+expect "Set root password? " { send "Y\r" } 
+expect "New password: " { send "$DBROOTPASSWORD\r" } 
+expect "Re-enter new password: " { send "$DBROOTPASSWORD\r" }
+expect "Remove anonymous users? " { send "n\r" }
+expect "Disallow root login remotely? " { send "n\r" } 
+expect "Remove test database and access to it? " { send "Y\r" }
+expect "Reload privilege tables now? " { send "Y\r" }
 
 expect "$ " { send "git clone $APPREPO && sudo mysql -u root -p < ~/bgapp/db/db_setup.sql\r" }
-expect "Enter password:" { send "$DBROOTPASSWORD\r" }
+expect "Enter password: " { send "$DBROOTPASSWORD\r" }
 
 expect "$ " { send "sudo ufw disable\r" }
 
