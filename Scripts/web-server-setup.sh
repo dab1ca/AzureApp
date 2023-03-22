@@ -5,7 +5,7 @@ set SERVERNAME [lindex $argv 2]
 set APPREPO [lindex $argv 3]
 set WEBSERVERPUBLICIP [lindex $argv 4]
 
-set timeout 60
+set timeout 600
 spawn ssh $SERVERUSER@$WEBSERVERPUBLICIP
 
 expect "yes/no" { 
@@ -13,7 +13,7 @@ expect "yes/no" {
 	expect "assword:" { send "$USERPASSWORD\r" }
 	} "assword:" { send "$USERPASSWORD\r" }
 
-expect "$ " { send "sudo hostnamectl set-hostname $SERVERNAME && sudo apt update && sudo apt install apache2 php php-mysqlnd git\r" }
+expect "$ " { send "sudo hostnamectl set-hostname $SERVERNAME && sudo sed -i '/localhost$/a 10.21.0.101 db' /etc/hosts && sudo apt update && sudo apt install apache2 php php-mysqlnd git\r" }
 
 expect "Do you want to continue?" { send "y\r" }
 
