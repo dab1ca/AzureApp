@@ -26,7 +26,7 @@ expect "$ " { send "git clone $APPREPO && sudo cp -v bgapp/web/* /var/www/html &
 
 expect "$ " { send "git clone https://github.com/dab1ca/AzureApp.git && sudo expect /home/$SERVERUSER/AzureApp/Scripts/db-server-setup.sh $SERVERUSER $USERPASSWORD $DBPASSWORD db $APPREPO 10.21.0.101\r" }
 
-expect "$ " { send "sudo rm -r /home/$SERVERUSER/AzureApp"}
+expect "$ " { send "sudo rm -r /home/$SERVERUSER/AzureApp\r"}
 
 expect "$ " { send "exit\r" }
 expect eof
