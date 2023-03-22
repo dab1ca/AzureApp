@@ -14,7 +14,7 @@ expect "yes/no" {
 	expect "assword:" { send "$USERPASSWORD\r" }
 	} "assword:" { send "$USERPASSWORD\r" }
 
-expect "$ " { send "sudo hostnamectl set-hostname $SERVERNAME && sudo sed -i '/localhost$/a 10.21.0.101 db' /etc/hosts && sudo apt update && sudo apt install apache2 php php-mysqlnd git\r" }
+expect "$ " { send "sudo hostnamectl set-hostname $SERVERNAME && sudo sed -i '/localhost$/a 10.21.0.101 db' /etc/hosts && sudo apt update && sudo apt install apache2 php php-mysqlnd git expect\r" }
 
 expect "Do you want to continue?" { send "y\r" }
 
