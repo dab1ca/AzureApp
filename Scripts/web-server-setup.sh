@@ -24,7 +24,7 @@ expect "Proceed with operation (y|n)?" { send "y\r" }
 
 expect "$ " { send "git clone $APPREPO && sudo cp -v bgapp/web/* /var/www/html && sudo rm /var/www/html/index.html\r" } 
 
-expect "$ " { send "git clone https://github.com/dab1ca/AzureApp.git && sudo expect /home/$SERVERUSER/AzureApp/Scripts/db-server-setup.sh $SERVERUSER $USERPASSWORD $DBPASSWORD db $APPREPO 10.21.0.101" }
+expect "$ " { send "git clone https://github.com/dab1ca/AzureApp.git && sudo expect /home/$SERVERUSER/AzureApp/Scripts/db-server-setup.sh $SERVERUSER $USERPASSWORD $DBPASSWORD db $APPREPO 10.21.0.101\r" }
 
 expect "$ " { send "sudo rm -r /home/$SERVERUSER/AzureApp"}
 
