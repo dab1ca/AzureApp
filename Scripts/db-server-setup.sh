@@ -8,14 +8,14 @@ set DBIPADDRESS [lindex $argv 5]
 
 spawn ssh $SERVERUSER@$DBIPADDRESS
 
-set timeout 60
+set timeout 75
 
 expect "yes/no" { 
 	send "yes\r"
 	expect "assword:" { send "$USERPASSWORD\r" }
 	} "assword:" { send "$USERPASSWORD\r" }
 
-expect "$ " { send "sudo hostnamectl set-hostname $SERVERNAME && sudo apt install mariadb-server git\r" }
+expect "$ " { send "sudo hostnamectl set-hostname $SERVERNAME && sudo apt update && sudo apt install mariadb-server git\r" }
 expect "Do you want to continue?" { send "Y\r" }
 
 expect "$ " { send "sudo mysql_secure_installation\r" }
